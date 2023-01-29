@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #input-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #output-section {
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #output-label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        #output {
+            width: 100%;
+            font-size: 16px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="input-section">
+        <label for="course-input">Enter a course name:</label>
+        <input type="text" id="course-input" placeholder="Example: Algorithms">
+        <button id="submit-button">Submit</button>
+    </div>
+    <div id="output-section">
+        <label id="output-label">Output:</label>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // Reading the courseData.txt file
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", "https://raw.githubusercontent.com/DonYall/Ontario-Top-6-Calculator/master/data/courseData.txt", false);
+        rawFile.onreadystatechange = function () {
+            if (rawFile.readyState === 4) {
+                if (rawFile.status === 200 || rawFile.status === 0) {
+                    var allText = rawFile.responseText;
+                    processData(allText);
+                }
+            }
+        };
+        rawFile.send(null);
+
+        // Processing the data
+        function processData(allText) {
+            var lines = allText.split("\n");
+            var courseData = {};
+
+            for (var i = 0; i < lines.length; i++) {
+                var line = lines[i];
+                var parts = line.split(":");
+                var course = parts[0];
+                var prereqs = parts[1];
+
+                if (prereqs === "NONE") {
+                    courseData[course] = [];
+                } else {
+                    prereqs = prereqs.split(",");
+                    courseData[course] = prereqs;
+                }
+            }
+
+            var possiblePaths = [];
+            for (var course in courseData) {
+                var prereqs = courseData[course];
+                var path = [];
+                findPath(course, path, prereqs, possiblePaths);
+            }
+
+            function findPath(course, path, prereqs, possiblePaths) {
+                path.push(course);
+                if (prereqs.length === 0) {
+                    possiblePaths.push(path);
+                    return;
+                }
+                for (var i = 0; i < prereqs.length; i++) {
+                    var newPath = path.slice();
+                    findPath(prereqs[i], newPath, courseData[prereqs[i]], possiblePaths);
+                }
+            }
+
+            var dropdown = document.getElementById("courses");
+            for (var i = 0; i < courses.length; i++) {
+                var option = document.createElement("option");
+                option.text = courses[i];
+                dropdown.add(option);
+            }
+
+            document.getElementById("submit").addEventListener("click", function () {
+                var selected = document.getElementById("courses").value;
+                var paths = [];
+                for (var i = 0; i < possiblePaths.length; i++) {
+                    if (possiblePaths[i][possiblePaths[i].length - 1] === selected) {
+                        paths.push(possiblePaths[i].join(" -> "));
+                    }
+                }
+                document.getElementById("output").innerHTML = paths.join("<br>");
+            });
+        }
+    </script>
+    </head>
+
+    <body>
+        <div id="input-section">
+            <label for="courses">Select a Course: </label>
+            <select id="courses">
+            </select>
+            <button id="submit">Submit</button>
+        </div>
+        <div id="output-section">
+            <p id="output"></p>
+        </div>
+    </body>
+
+</html>
