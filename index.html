@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Math Past Papers</title>
-</head>
-<body>
-  <h1>Math Past Papers</h1>
-  <ul id="pdf_list">
-  </ul>
-  <script>
-    const apiUrl = "https://api.github.com/repos/DonYall/Math-Past-Papers/contents/";
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        const pdfs = data.filter(file => file.name.endsWith(".pdf"));
-        const pdfList = document.getElementById("pdf_list");
-        pdfs.forEach((pdf, index) => {
-          const li = document.createElement("li");
-          li.innerHTML = `<a href="#" onclick="document.getElementById('pdf_preview_${index}').style.display='block'">${pdf.name}</a>
-          <div id="pdf_preview_${index}" style="display:none">
-            <object data="${pdf.download_url}" type="application/pdf" width="100%" height="800px">
-            </object>
-          </div>`;
-          pdfList.appendChild(li);
+  <head>
+    <title>Math Past Papers</title>
+  </head>
+  <body>
+    <h1>Math Past Papers</h1>
+    <ul id="paper-list"></ul>
+    
+    <script>
+      fetch("https://api.github.com/repos/DonYall/Math-Past-Papers/contents")
+        .then(response => response.json())
+        .then(data => {
+          const paperList = document.getElementById("paper-list");
+          data.forEach(item => {
+            if (item.type === "file" && item.name.endsWith(".pdf")) {
+              const li = document.createElement("li");
+              const a = document.createElement("a");
+              a.href = item.html_url;
+              a.innerText = item.name;
+              li.appendChild(a);
+              paperList.appendChild(li);
+            } else if (item.type === "dir") {
+              fetch(item.url)
+                .then(response => response.json())
+                .then(dirData => {
+                  dirData.forEach(dirItem => {
+                    if (dirItem.type === "file" && dirItem.name.endsWith(".pdf")) {
+                      const li = document.createElement("li");
+                      const a = document.createElement("a");
+                      a.href = dirItem.html_url;
+                      a.innerText = dirItem.name;
+                      li.appendChild(a);
+                      paperList.appendChild(li);
+                    }
+                  });
+                });
+            }
+          });
         });
-      });
-  </script>
-</body>
-</html>
+    </script>
+  </body>
