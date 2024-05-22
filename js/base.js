@@ -53,15 +53,27 @@ btnSwitch.addEventListener("click", function (e) {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".projectsButton").forEach((button) => {
-        button.addEventListener("click", function () {
-            window.scrollTo(0, window.innerHeight);
-        });
-    });
-
     document.querySelectorAll(".aboutMeButton").forEach((button) => {
         button.addEventListener("click", function () {
             window.scrollTo(0, 0);
         });
     });
+
+    document.querySelectorAll(".projectsButton").forEach((button) => {
+        button.addEventListener("click", function () {
+            window.scrollTo(0, document.getElementById("projectsSection").offsetTop);
+        });
+    });
+
+    document.querySelectorAll(".contactButton").forEach((button) => {
+        button.addEventListener("click", function () {
+            window.scrollTo(0, document.getElementById("contactSection").offsetTop);
+        });
+    });
+});
+
+document.getElementById("discordButton").addEventListener("click", function () {
+    const discordUsername = "donyall.";
+    navigator.clipboard.writeText(discordUsername);
+    alert(`Copied to clipboard!`);
 });

@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="./resourses/profilepic.jpg" />
+        <link rel="shortcut icon" href="./resources/profilepic.jpg" />
 
         <link
             rel="stylesheet"
@@ -14,6 +14,7 @@
             referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./style/index.css" />
         <link rel="stylesheet" href="./style/projects.css" />
+        <link rel="stylesheet" href="./style/contact.css" />
         <title>Danyal Haji</title>
     </head>
     <body>
@@ -48,7 +49,7 @@
                 <div class="main-left">
                     <div class="card">
                         <div class="card-image">
-                            <img src="./resourses/profilepic.jpg" alt="My picture" />
+                            <img src="./resources/profilepic.jpg" alt="My picture" />
                         </div>
                         <h1 class="card-name">Danyal Haji</h1>
                         <h2 class="card-work">FULL-STACK DEVELOPER</h2>
@@ -60,7 +61,9 @@
                             <a href="https://github.com/donyall" target="_blank">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="mailto:danyalalihaji@gmail.com"><img src="./resourses/google.png" alt="" /></a>
+                            <a href="mailto:danyalalihaji@gmail.com">
+                                <i class="fas fa-envelope"></i>
+                            </a>
                             <a href="https://www.linkedin.com/in/danyal-haji/" target="_blank">
                                 <i class="fab fa-linkedin"></i>
                             </a>
@@ -84,7 +87,7 @@
                 </div>
             </div>
         </main>
-        <section>
+        <section id="projectsSection">
             <div class="container">
                 <div class="heading">
                     <i class="fas fa-square"></i>
@@ -94,7 +97,7 @@
                     <div class="proj-row">
                         <figure class="project">
                             <div class="show-image">
-                                <img src="./resourses/epiclegion.png" />
+                                <img src="./resources/epiclegion.png" />
                             </div>
                             <h1>Mark's Modpacks</h1>
                             <p>
@@ -109,7 +112,7 @@
                         </figure>
                         <figure class="project">
                             <div class="show-image">
-                                <img src="./resourses/dotfiles.png" />
+                                <img src="./resources/dotfiles.png" />
                             </div>
                             <h1>Dotfiles</h1>
                             <p>A boring Arch Linux rice which doesn't use many resources.<br /><br />Uses i3 as a window manager.</p>
@@ -121,7 +124,7 @@
                         </figure>
                         <figure class="project">
                             <div class="show-image">
-                                <img src="./resourses/searchengine.png" />
+                                <img src="./resources/searchengine.png" />
                             </div>
                             <h1>Search Engine</h1>
                             <p>
@@ -134,6 +137,43 @@
                                 ></a>
                             </div>
                         </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contactSection">
+            <div class="container">
+                <div class="heading">
+                    <i class="fas fa-square"></i>
+                    <h1>CONTACT</h1>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-row">
+                        <div class="contact-info">
+                            <p>
+                                I'm always looking for new opportunities to work on projects. If you're interested in working with me, please contact
+                                me using the form below.
+                            </p>
+                            <div class="contact-links">
+                                <a href="https://www.linkedin.com/in/danyal-haji">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="mailto:danyalalihaji@gmail.com">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <button id="discordButton">
+                                    <i class="fab fa-discord"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="contact-form">
+                            <form action="https://formspree.io/f/xnqeydky" method="POST">
+                                <input type="text" name="name" placeholder="Name" required />
+                                <input type="email" name="_replyto" placeholder="Email" required />
+                                <textarea name="message" placeholder="Message" required></textarea>
+                                <button type="submit">Send</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

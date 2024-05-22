@@ -1,9 +1,6 @@
-section {
+#projectsSection {
     background: var(--bg-color);
-    min-height: 100vh;
 }
-
-/* project box styling */
 
 .proj-row {
     display: flex;

@@ -4,8 +4,6 @@ header {
     height: 100vh;
 }
 
-/* Main Styling */
-
 main {
     min-height: 88vh;
     position: relative;
@@ -183,10 +181,11 @@ section > .container {
     display: none;
 }
 
+section {
+    min-height: 100vh;
+}
+
 @media screen and (max-width: 455px) {
-    .main-right {
-        width: 90%;
-    }
 }
 
 @media screen and (max-width: 825px) {
@@ -198,7 +197,6 @@ section > .container {
     }
 
     main {
-        background: var(--bg-color);
         margin: 0 auto;
     }
 
@@ -240,5 +238,13 @@ section > .container {
 
     .info h2 {
         margin-bottom: 2rem;
+    }
+
+    .main-right {
+        width: 90%;
+    }
+
+    .info {
+        width: 100%;
     }
 }
