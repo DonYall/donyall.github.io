@@ -227,11 +227,7 @@ section {
 
     .main-right .info-links,
     .main-left .card-work {
-        display: none;
-    }
-
-    .main-left .info-links {
-        display: block;
+        margin-top: 2rem;
     }
 
     .info h1 {
@@ -247,13 +243,23 @@ section {
         margin-top: 10rem;
         padding-top: 0;
     }
+
+    .card-name::after {
+        display: none;
+    }
+
     .main-left .card,
     .card:hover {
+        height: auto;
         margin: 0px !important;
         z-index: 4;
         width: 400px;
         padding: 20px;
         border-radius: 10px;
+    }
+
+    .resume {
+        margin-bottom: 6rem;
     }
 
     .info h2 {

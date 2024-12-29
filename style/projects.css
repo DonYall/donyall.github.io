@@ -181,6 +181,11 @@ a.proj-btn:hover i {
     .project {
         width: 48%;
     }
+
+    .project img {
+        width: 100%;
+        height: auto;
+    }
 }
 @media screen and (max-width: 770px) {
     .proj-row {
