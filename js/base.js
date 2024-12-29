@@ -15,58 +15,42 @@ icon.addEventListener("click", function () {
 });
 
 
-let darkMode = localStorage.getItem("darkMode");
-
 const btnSwitch = document.querySelector(".switch");
 const light = document.querySelector(".fa-sun");
 const dark = document.querySelector(".fa-moon");
 
-const enableDarkMode = () => {
+const toggleDarkMode = () => {
     light.classList.toggle("hidden");
     dark.classList.toggle("hidden");
     document.body.classList.toggle("dark-theme");
-    localStorage.setItem("darkMode", "enabled");
 };
 
-const disableDarkMode = () => {
-    light.classList.toggle("hidden");
-    dark.classList.toggle("hidden");
-    document.body.classList.toggle("dark-theme");
-    localStorage.setItem("darkMode", null);
-};
-
-if (darkMode === "enabled") {
-    enableDarkMode();
-}
+toggleDarkMode();
 
 btnSwitch.addEventListener("click", function (e) {
-    console.log("click");
     e.preventDefault();
-    darkMode = localStorage.getItem("darkMode");
-
-    if (darkMode !== "enabled") {
-        enableDarkMode();
-    } else {
-        disableDarkMode();
-    }
+    toggleDarkMode();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".aboutMeButton").forEach((button) => {
         button.addEventListener("click", function () {
             window.scrollTo(0, 0);
+            menu.classList.remove("active");
         });
     });
 
     document.querySelectorAll(".projectsButton").forEach((button) => {
         button.addEventListener("click", function () {
             window.scrollTo(0, document.getElementById("projectsSection").offsetTop);
+            menu.classList.remove("active");
         });
     });
 
     document.querySelectorAll(".contactButton").forEach((button) => {
         button.addEventListener("click", function () {
             window.scrollTo(0, document.getElementById("contactSection").offsetTop);
+            menu.classList.remove("active");
         });
     });
 });
