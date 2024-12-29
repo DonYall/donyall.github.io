@@ -36,21 +36,30 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".aboutMeButton").forEach((button) => {
         button.addEventListener("click", function () {
             window.scrollTo(0, 0);
-            menu.classList.remove("active");
+            line1.classList.toggle("active");
+            line2.classList.toggle("active");
+            line3.classList.toggle("active");
+            menu.classList.toggle("active");
         });
     });
 
     document.querySelectorAll(".projectsButton").forEach((button) => {
         button.addEventListener("click", function () {
             window.scrollTo(0, document.getElementById("projectsSection").offsetTop);
-            menu.classList.remove("active");
+            line1.classList.toggle("active");
+            line2.classList.toggle("active");
+            line3.classList.toggle("active");
+            menu.classList.toggle("active");
         });
     });
 
     document.querySelectorAll(".contactButton").forEach((button) => {
         button.addEventListener("click", function () {
             window.scrollTo(0, document.getElementById("contactSection").offsetTop);
-            menu.classList.remove("active");
+            line1.classList.toggle("active");
+            line2.classList.toggle("active");
+            line3.classList.toggle("active");
+            menu.classList.toggle("active");
         });
     });
 });
