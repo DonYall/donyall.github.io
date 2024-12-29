@@ -36,30 +36,30 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".aboutMeButton").forEach((button) => {
         button.addEventListener("click", function () {
             window.scrollTo(0, 0);
-            line1.classList.toggle("active");
-            line2.classList.toggle("active");
-            line3.classList.toggle("active");
-            menu.classList.toggle("active");
+            line1.classList.remove("active");
+            line2.classList.remove("active");
+            line3.classList.remove("active");
+            menu.classList.remove("active");
         });
     });
 
     document.querySelectorAll(".projectsButton").forEach((button) => {
         button.addEventListener("click", function () {
             window.scrollTo(0, document.getElementById("projectsSection").offsetTop);
-            line1.classList.toggle("active");
-            line2.classList.toggle("active");
-            line3.classList.toggle("active");
-            menu.classList.toggle("active");
+            line1.classList.remove("active");
+            line2.classList.remove("active");
+            line3.classList.remove("active");
+            menu.classList.remove("active");
         });
     });
 
     document.querySelectorAll(".contactButton").forEach((button) => {
         button.addEventListener("click", function () {
             window.scrollTo(0, document.getElementById("contactSection").offsetTop);
-            line1.classList.toggle("active");
-            line2.classList.toggle("active");
-            line3.classList.toggle("active");
-            menu.classList.toggle("active");
+            line1.classList.remove("active");
+            line2.classList.remove("active");
+            line3.classList.remove("active");
+            menu.classList.remove("active");
         });
     });
 });
