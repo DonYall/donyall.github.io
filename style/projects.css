@@ -1,7 +1,3 @@
-#projectsSection {
-    background: var(--bg-color);
-}
-
 .proj-row {
     display: flex;
     flex-wrap: wrap;
@@ -31,7 +27,8 @@
 }
 
 .project img {
-    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: 0.3s;
 }
 
@@ -137,7 +134,15 @@
     width: max-content;
 }
 
-.proj-btn i {
+div.proj-btn {
+    opacity: 0.5;
+}
+
+div.proj-btn i {
+    margin-right: 0.5rem;
+}
+
+a.proj-btn i {
     margin-left: 0.5rem;
     transition: 0.2s;
     pointer-events: none;
@@ -145,7 +150,7 @@
     width: 15px;
 }
 
-.proj-btn:hover i {
+a.proj-btn:hover i {
     transform: translateX(8px);
 }
 

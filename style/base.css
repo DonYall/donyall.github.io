@@ -106,6 +106,7 @@ body {
 
 .heading {
     display: flex;
+    align-self: flex-start;
     align-items: center;
     text-align: center;
     padding: 5rem 0 2rem 0;
@@ -131,7 +132,6 @@ body {
     font-weight: 800;
 }
 
-/* nav styling */
 nav {
     padding: 0rem 2.5rem;
     display: flex;
@@ -198,8 +198,6 @@ nav > .container {
 .nav-right button:hover {
     color: var(--primary-color);
 }
-
-/* Footer Styling */
 
 footer {
     display: flex;
@@ -317,6 +315,10 @@ b {
     }
 }
 @media screen and (max-width: 825px) {
+    .heading {
+        margin-left: 20px;
+    }
+
     .nav-right {
         position: absolute;
         top: 0;

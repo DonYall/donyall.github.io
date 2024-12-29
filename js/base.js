@@ -14,7 +14,6 @@ icon.addEventListener("click", function () {
     menu.classList.toggle("active");
 });
 
-// darkmode
 
 let darkMode = localStorage.getItem("darkMode");
 
