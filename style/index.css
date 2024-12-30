@@ -76,20 +76,20 @@ section > .container {
     color: var(--dark);
 }
 
-.card-name::after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 60px;
-    margin: 2.3rem auto 2.8rem auto;
-    border-radius: 100px;
-    background: var(--primary-color);
-}
-
 .card-work {
     font-size: 1.5rem;
     color: var(--dark);
     letter-spacing: 5px;
+}
+
+.card-work::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 70%;
+    margin: 2rem auto 2rem auto;
+    border-radius: 100px;
+    background: var(--primary-color);
 }
 
 .resume {
@@ -244,7 +244,7 @@ section {
         padding-top: 0;
     }
 
-    .card-name::after {
+    .card-work::before {
         display: none;
     }
 
