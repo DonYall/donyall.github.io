@@ -193,7 +193,7 @@ a.proj-btn:hover i {
     }
     .project {
         flex-direction: column;
-        width: 400px;
+        width: 350px;
         margin-top: 3rem;
         height: fit-content;
     }
