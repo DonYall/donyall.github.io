@@ -1,0 +1,107 @@
+/* Main Stylesheet - Modern Portfolio */
+@import url('./design-tokens.css');
+@import url('./reset.css');
+@import url('./layout.css');
+@import url('./components.css');
+
+/* Custom animations and utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Stagger animations for cards */
+.stagger > * {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.stagger > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .fade-in-up,
+  .stagger > * {
+    animation: none;
+  }
+}
+
+/* Focus management */
+.focus-outline {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Text utilities */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Image optimization */
+img {
+  loading: lazy;
+}
+
+/* Ensure proper contrast in all themes */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: var(--color-gray-400);
+    --color-text-secondary: var(--color-gray-700);
+  }
+  
+  [data-theme="dark"] {
+    --color-border: var(--color-gray-500);
+    --color-text-secondary: var(--color-gray-200);
+  }
+}
+
+/* Print optimizations */
+@media print {
+  .header__menu-toggle,
+  .theme-toggle,
+  .contact-form {
+    display: none !important;
+  }
+  
+  .hero,
+  .section {
+    padding: var(--space-lg) 0;
+  }
+  
+  .card {
+    box-shadow: none;
+    border: 2px solid var(--color-border);
+  }
+}

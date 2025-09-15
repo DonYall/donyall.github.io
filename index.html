@@ -3,297 +3,513 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./favicon.png" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./style/index.css" />
-    <link rel="stylesheet" href="./style/projects.css" />
-    <link rel="stylesheet" href="./style/contact.css" />
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="./style/main.css" />
+    
+    <!-- SEO and meta tags -->
     <meta name="google-site-verification" content="dbnkeKwuUQ9pulUfFbj2U7AulpQrleFzM30Nc5jOR2Y" />
-    <title>Danyal Haji - Carleton University</title>
+    <title>Danyal Haji - Web Developer & Engineering Student</title>
     <meta name="description"
-        content="Danyal Haji is a web developer based in Ottawa, Ontario. He is currently studying at Carleton University." />
-    <meta property="og:title" content="Danyal Haji - Carleton University" />
+        content="Web developer and engineering student at Carleton University. Passionate about creating modern, accessible web experiences and exploring space technology." />
+    <meta property="og:title" content="Danyal Haji - Web Developer & Engineering Student" />
     <meta property="og:image" content="https://danyalhaji.com/resources/profilepic.jpg" />
     <meta property="og:description"
-        content="Danyal Haji is a web developer based in Ottawa, Ontario. He is currently studying at Carleton University." />
+        content="Web developer and engineering student at Carleton University. Passionate about creating modern, accessible web experiences and exploring space technology." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://danyalhaji.com" />
+    
+    <!-- Theme detection script -->
+    <script>
+        // Detect system preference and saved theme
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        } else if (systemPrefersDark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
 </head>
 
 <body>
-    <div class="switch">
-        <i class="btn-switch fa-solid fa-moon"></i>
-        <i class="btn-switch hidden fa-solid fa-sun"></i>
-    </div>
-    <nav>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" id="header">
         <div class="container">
-            <div class="nav-left">
-                <i class="fas fa-square"></i>
-                <h1>Danyal Haji</h1>
-                <span><small>/</small> Carleton University</span>
+            <div class="header__container">
+                <a href="#hero" class="header__logo">
+                    <span class="text-gradient">Danyal Haji</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="header__nav" aria-label="Main navigation">
+                    <ul class="header__nav-list">
+                        <li><a href="#about" class="header__nav-link">About</a></li>
+                        <li><a href="#projects" class="header__nav-link">Projects</a></li>
+                        <li><a href="#contact" class="header__nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile menu toggle -->
+                <button class="header__menu-toggle" aria-expanded="false" aria-label="Toggle mobile menu">
+                    <span class="header__menu-line"></span>
+                    <span class="header__menu-line"></span>
+                    <span class="header__menu-line"></span>
+                </button>
             </div>
-
-            <div class="nav-right">
-                <ul>
-                    <li><button class="aboutMeButton">ABOUT ME</button></li>
-                    <li><button class="projectsButton">PROJECTS</button></li>
-                    <li><button class="contactButton">CONTACT</button></li>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="header__mobile-menu" data-open="false">
+            <nav aria-label="Mobile navigation">
+                <ul class="header__mobile-nav-list">
+                    <li><a href="#about" class="header__mobile-nav-link">About</a></li>
+                    <li><a href="#projects" class="header__mobile-nav-link">Projects</a></li>
+                    <li><a href="#contact" class="header__mobile-nav-link">Contact</a></li>
                 </ul>
-            </div>
-            <div class="menu">
-                <span class="line line-1"></span>
-                <span class="line line-2"></span>
-                <span class="line line-3"></span>
-            </div>
+            </nav>
         </div>
-    </nav>
-    <main>
-        <div class="container">
-            <div class="main-left">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./resources/profilepic.jpg" alt="My picture" />
-                    </div>
-                    <h1 class="card-name">Danyal Haji</h1>
-                    <h2 class="card-work">CARLETON UNIVERSITY</h2>
-                    <a class="resume" href="./resources/resume.pdf" target="_blank"><i
-                            class="fa-regular fa-file-lines"></i>Resume</a>
-                    <div class="info-links">
-                        <button class="contactButton">CONTACT</button>
-                        <button class="projectsButton">PROJECTS</button>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://github.com/donyall" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:danyalalihaji@gmail.com">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/danyal-haji/" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="main-right">
-                <div class="info">
-                    <h1>About me</h1>
-                    <br />
-                    <p class="aboutme">
-                        I'm currently studying at Carleton University, looking for opportunities to apply my
-                        skills in web development and software engineering.
-                    </p>
-                    <p class="last">If you're interested in working with me, or if you just want to chat, don't hesitate
-                        to contact me.</p>
-                    <div class="info-links">
-                        <button class="contactButton">CONTACT</button>
-                        <button class="projectsButton">PROJECTS</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <section id="projectsSection">
-        <div class="container">
-            <div class="heading">
-                <i class="fas fa-square"></i>
-                <h1>PROJECTS</h1>
-            </div>
-            <div class="projects-wrapper">
-                <div class="proj-row">
-                    <figure class="project">
-                        <div class="show-image">
-                            <img src="./resources/nexus.png" />
-                        </div>
-                        <h1>Colliseam</h1>
-                        <p>
-                            A collaborative platform for developers to share their projects and connect with others.
-                            Built with React.js, FastAPI, and PostgreSQL.
+    </header>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero__content fade-in-up">
+                    <div class="hero__text">
+                        <h1 class="hero__title">
+                            Hi, I'm Danyal Haji
+                        </h1>
+                        <h2 class="hero__subtitle">
+                            Web Developer & Engineering Student
+                        </h2>
+                        <p class="hero__description">
+                            I'm passionate about creating modern, accessible web experiences and exploring space technology. 
+                            Currently studying at Carleton University and building projects that make a difference.
                         </p>
-                        <div class="fl">
-                            <div class="hover proj-btn"> <i class="fa-solid fa-hourglass-start"></i>
-                                In Progress
-                            </div>
-                        </div>
-                    </figure>
-                    <figure class="project">
-                        <div class="show-image">
-                            <img src="./resources/ca2rc.png" />
-                        </div>
-                        <h1>CUonOrbit Homepage</h1>
-                        <p>
-                            A static multi-page website built for the Carleton University On Orbit club
-                            using React.js and Tailwind CSS.
-                        </p>
-                        <div class="fl">
-                            <a target="_blank" class="hover proj-btn" href="https://cuonorbit.ca/">Preview
-                                <i class="fa-solid fa-chevron-right"></i>
+                        <div class="hero__actions">
+                            <a href="#projects" class="btn btn--primary btn--lg">
+                                View Projects
+                                <svg class="btn__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </a>
+                            <a href="#contact" class="btn btn--outline btn--lg">
+                                Get In Touch
                             </a>
                         </div>
-                    </figure>
-                    <figure class="project">
-                        <div class="show-image">
-                            <img src="./resources/hab.jpg" />
-                        </div>
-                        <h1>High Altitude Balloon</h1>
-                        <p>
-                            Carries equipment to the stratosphere to measure temperature, pressure, radiation, altitude,
-                            and more.
-                        </p>
-                        <div class="fl">
-                            <a target="_blank" class="hover proj-btn" href="https://cuonorbit.ca/projects/hab">Preview
-                                <i class="fa-solid fa-chevron-right"></i></a>
-                        </div>
-                    </figure>
-                    <figure class="project">
-                        <div class="show-image">
-                            <img src="./resources/landsat.png" />
-                        </div>
-                        <h1>LandSat Lab</h1>
-                        <p>
-                            A web platform that makes NASA's Landsat 8 and 9 data accessible to both citizen scientists
-                            and researchers. </p>
-                        <div class="fl">
-                            <a target="_blank" class="hover proj-btn"
-                                href="https://www.linkedin.com/posts/cuonorbit_nasaapps-landsatlab-citizenscience-activity-7253620589104447489-5HX8">Preview
-                                <i class="fa-solid fa-chevron-right"></i></a>
-                        </div>
-                    </figure>
-                    <figure class="project">
-                        <div class="show-image">
-                            <img src="./resources/pramit.png" />
-                        </div>
-                        <h1>Client Portfolio</h1>
-                        <p>
-                            A multi-page portfolio website built for a client to showcase his projects and skills, using
-                            React.js and Tailwind CSS.
-                        </p>
-                        <div class="fl">
-                            <a target="_blank" class="hover proj-btn" href="https://pramitshende.com/">Preview
-                                <i class="fa-solid fa-chevron-right"></i></a>
-                        </div>
-                    </figure>
-                    <figure class="project">
-                        <div class="show-image">
-                            <img src="./resources/epiclegion.png" />
-                        </div>
-                        <h1>Mark's Modpacks</h1>
-                        <p>
-                            A showcase of Mark's Minecraft modpacks as a web experience developed with raw HTML, and
-                            Flask for the backend.
-                        </p>
-                        <div class="fl">
-                            <a target="_blank" class="hover proj-btn" href="https://markpacks.net">Preview <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
-                    </figure>
-                    <figure class="project">
-                        <div class="show-image">
-                            <img src="./resources/searchengine.png" />
-                        </div>
-                        <h1>Search Engine</h1>
-                        <p>
-                            Given a search query, it calculates the PageRank and search scores in order to rank pages
-                            based on their similarity to
-                            the query.
-                        </p>
-                        <div class="fl">
-                            <a target="_blank" class="hover proj-btn"
-                                href="https://github.com/donyall/search-engine">Preview <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
-                    </figure>
-                    <figure class="project">
-                        <div class="show-image">
-                            <img src="./resources/fnaf.png" />
-                        </div>
-                        <h1>Five Nights At Prescott</h1>
-                        <p>
-                            A PC horror game inspired by Five Nights at Freddy's developed in Godot 4, where you
-                            play as the newest resident of Prescott House.
-                        </p>
-                        <div class="fl">
-                            <a target="_blank" class="hover proj-btn"
-                                href="https://donyall.itch.io/five-nights-at-prescott">Preview <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
-                    </figure>
-                    <figure class="project">
-                        <div class="show-image">
-                            <img src="./resources/leadboot.png" />
-                        </div>
-                        <h1>Lead Boot Larry</h1>
-                        <p>
-                            A 2D platformer Foddian game inspired by Getting Over It developed in Godot
-                            4. Guide Larry to the top, but be careful not to fall!
-                        </p>
-                        <div class="fl">
-                            <a target="_blank" class="hover proj-btn"
-                                href="https://sites.google.com/view/lead-boot-larry/home">Preview <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
-                    </figure>
+                    </div>
+                    <div class="hero__image">
+                        <img 
+                            src="./resources/profilepic.jpg" 
+                            alt="Danyal Haji - Professional headshot" 
+                            class="hero__avatar"
+                            width="280"
+                            height="280"
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="contactSection">
-        <div class="container">
-            <div class="heading">
-                <i class="fas fa-square"></i>
-                <h1>CONTACT</h1>
-            </div>
-            <div class="contact-wrapper">
-                <div class="contact-row">
-                    <div class="contact-info">
-                        <p>
-                            Feel free to contact me using the form below.
-                        </p>
+        </section>
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section__header fade-in">
+                    <h2 class="section__title">About Me</h2>
+                    <p class="section__subtitle">
+                        Passionate about web development, space technology, and creating impactful digital experiences.
+                    </p>
+                </div>
+                
+                <div class="content fade-in-up">
+                    <div class="grid grid-cols-1" style="gap: var(--space-2xl);">
+                        <div class="card">
+                            <div class="card__content">
+                                <p>
+                                    I'm currently studying at Carleton University, where I'm diving deep into software engineering 
+                                    and web development. My passion lies in creating modern, accessible web applications that solve 
+                                    real-world problems.
+                                </p>
+                                <p>
+                                    Through my involvement with the Carleton University On Orbit club, I've had the opportunity to 
+                                    work on exciting space technology projects, including high-altitude balloon missions and 
+                                    NASA challenge competitions.
+                                </p>
+                                <p>
+                                    I believe in writing clean, maintainable code and designing user experiences that are both 
+                                    beautiful and functional. When I'm not coding, you can find me exploring new technologies 
+                                    or contributing to open-source projects.
+                                </p>
+                            </div>
+                            <div class="card__footer">
+                                <a href="./resources/resume.pdf" target="_blank" class="btn btn--secondary">
+                                    <svg class="btn__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                    </svg>
+                                    Download Resume
+                                </a>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section__header fade-in">
+                    <h2 class="section__title">Featured Projects</h2>
+                    <p class="section__subtitle">
+                        A showcase of my recent work in web development, space technology, and interactive applications.
+                    </p>
+                </div>
+                
+                <div class="grid-responsive stagger">
+                    <!-- Project: Colliseam -->
+                    <article class="card">
+                        <img 
+                            src="./resources/nexus.png" 
+                            alt="Colliseam platform interface"
+                            class="card__image"
+                            loading="lazy"
+                            width="400"
+                            height="200"
+                        />
+                        <div class="card__header">
+                            <h3 class="card__title">Colliseam</h3>
+                            <span class="card__subtitle">Full-Stack Platform</span>
+                        </div>
+                        <div class="card__content">
+                            <p class="card__description">
+                                A collaborative platform for developers to share projects and connect with others. 
+                                Built with modern technologies and a focus on community building.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="card__footer">
+                            <div class="project-links">
+                                <span class="project-link">
+                                    <svg class="project-link__icon" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                                    </svg>
+                                    In Progress
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project: CUonOrbit Homepage -->
+                    <article class="card">
+                        <img 
+                            src="./resources/ca2rc.png" 
+                            alt="CUonOrbit website homepage"
+                            class="card__image"
+                            loading="lazy"
+                            width="400"
+                            height="200"
+                        />
+                        <div class="card__header">
+                            <h3 class="card__title">CUonOrbit Homepage</h3>
+                            <span class="card__subtitle">Static Website</span>
+                        </div>
+                        <div class="card__content">
+                            <p class="card__description">
+                                Official website for Carleton University's space technology club, featuring project 
+                                showcases and mission information.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">Static Site</span>
+                            </div>
+                        </div>
+                        <div class="card__footer">
+                            <div class="project-links">
+                                <a href="https://cuonorbit.ca/" target="_blank" class="project-link project-link--primary">
+                                    <svg class="project-link__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                    Live Site
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project: High Altitude Balloon -->
+                    <article class="card">
+                        <img 
+                            src="./resources/hab.jpg" 
+                            alt="High altitude balloon equipment"
+                            class="card__image"
+                            loading="lazy"
+                            width="400"
+                            height="200"
+                        />
+                        <div class="card__header">
+                            <h3 class="card__title">High Altitude Balloon</h3>
+                            <span class="card__subtitle">Space Technology</span>
+                        </div>
+                        <div class="card__content">
+                            <p class="card__description">
+                                Stratospheric research mission carrying scientific equipment to measure environmental 
+                                data including temperature, pressure, and radiation levels.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Arduino</span>
+                                <span class="tech-tag">Sensors</span>
+                                <span class="tech-tag">Telemetry</span>
+                            </div>
+                        </div>
+                        <div class="card__footer">
+                            <div class="project-links">
+                                <a href="https://cuonorbit.ca/projects/hab" target="_blank" class="project-link project-link--primary">
+                                    <svg class="project-link__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project: LandSat Lab -->
+                    <article class="card">
+                        <img 
+                            src="./resources/landsat.png" 
+                            alt="LandSat Lab interface"
+                            class="card__image"
+                            loading="lazy"
+                            width="400"
+                            height="200"
+                        />
+                        <div class="card__header">
+                            <h3 class="card__title">LandSat Lab</h3>
+                            <span class="card__subtitle">NASA Challenge</span>
+                        </div>
+                        <div class="card__content">
+                            <p class="card__description">
+                                Web platform making NASA's Landsat 8 and 9 satellite data accessible to citizen 
+                                scientists and researchers for environmental monitoring.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Data Science</span>
+                                <span class="tech-tag">NASA API</span>
+                                <span class="tech-tag">Visualization</span>
+                            </div>
+                        </div>
+                        <div class="card__footer">
+                            <div class="project-links">
+                                <a href="https://www.linkedin.com/posts/cuonorbit_nasaapps-landsatlab-citizenscience-activity-7253620589104447489-5HX8" target="_blank" class="project-link project-link--primary">
+                                    <svg class="project-link__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project: Client Portfolio -->
+                    <article class="card">
+                        <img 
+                            src="./resources/pramit.png" 
+                            alt="Client portfolio website"
+                            class="card__image"
+                            loading="lazy"
+                            width="400"
+                            height="200"
+                        />
+                        <div class="card__header">
+                            <h3 class="card__title">Client Portfolio</h3>
+                            <span class="card__subtitle">Freelance Project</span>
+                        </div>
+                        <div class="card__content">
+                            <p class="card__description">
+                                Multi-page portfolio website designed and developed for a client to showcase their 
+                                projects and professional skills.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">Responsive</span>
+                            </div>
+                        </div>
+                        <div class="card__footer">
+                            <div class="project-links">
+                                <a href="https://pramitshende.com/" target="_blank" class="project-link project-link--primary">
+                                    <svg class="project-link__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                    Live Site
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project: Mark's Modpacks -->
+                    <article class="card">
+                        <img 
+                            src="./resources/epiclegion.png" 
+                            alt="Mark's Modpacks website"
+                            class="card__image"
+                            loading="lazy"
+                            width="400"
+                            height="200"
+                        />
+                        <div class="card__header">
+                            <h3 class="card__title">Mark's Modpacks</h3>
+                            <span class="card__subtitle">Web Application</span>
+                        </div>
+                        <div class="card__content">
+                            <p class="card__description">
+                                Interactive showcase for Minecraft modpacks featuring dynamic content management 
+                                and community features.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">Backend</span>
+                            </div>
+                        </div>
+                        <div class="card__footer">
+                            <div class="project-links">
+                                <a href="https://markpacks.net" target="_blank" class="project-link project-link--primary">
+                                    <svg class="project-link__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                    Live Site
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="section__header fade-in">
+                    <h2 class="section__title">Get In Touch</h2>
+                    <p class="section__subtitle">
+                        Let's discuss opportunities, projects, or just have a friendly chat about technology.
+                    </p>
+                </div>
+                
+                <div class="fade-in-up">
                     <div class="contact-form">
+                        <h3 class="contact-form__title">Send me a message</h3>
                         <form action="https://formspree.io/f/xnqeydky" method="POST">
-                            <input type="text" name="name" placeholder="Name*" required />
-                            <input type="email" name="_replyto" placeholder="Email*" required />
-                            <input type="tel" name="phone" placeholder="Phone" />
-                            <textarea rows="4" name="message" placeholder="Message*" required></textarea>
-                            <button type="submit">Send</button>
+                            <div class="contact-form__row contact-form__row--cols-2">
+                                <div class="form-group">
+                                    <label for="contact-name" class="form-label form-label--required">Name</label>
+                                    <input 
+                                        type="text" 
+                                        id="contact-name"
+                                        name="name" 
+                                        class="form-input" 
+                                        placeholder="Your full name"
+                                        required 
+                                        autocomplete="name"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email" class="form-label form-label--required">Email</label>
+                                    <input 
+                                        type="email" 
+                                        id="contact-email"
+                                        name="_replyto" 
+                                        class="form-input" 
+                                        placeholder="your.email@example.com"
+                                        required 
+                                        autocomplete="email"
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject" class="form-label">Subject</label>
+                                <input 
+                                    type="text" 
+                                    id="contact-subject"
+                                    name="subject" 
+                                    class="form-input" 
+                                    placeholder="What's this about?"
+                                    autocomplete="off"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message" class="form-label form-label--required">Message</label>
+                                <textarea 
+                                    id="contact-message"
+                                    name="message" 
+                                    class="form-input form-textarea" 
+                                    placeholder="Tell me about your project or just say hello!"
+                                    required
+                                    rows="5"
+                                ></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">
+                                <svg class="btn__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                                </svg>
+                                Send Message
+                            </button>
                         </form>
                     </div>
                 </div>
-                <div class="contact-row">
-                    <div class="contact-info">
-                        <p>
-                            Alternatively, you can reach out to me using the following links.
-                        </p>
-                        <div class="contact-links">
-                            <a href="mailto:danyalalihaji@gmail.com">
-                                <i class="fas fa-envelope"></i> <span>danyalalihaji@gmail.com</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/danyal-haji">
-                                <i class="fab fa-linkedin"></i> <span>danyal-haji</span>
-                            </a>
-                            <button id="discordButton">
-                                <i class="fab fa-discord"></i> <span>donyall.</span>
-                            </button>
-                        </div>
-                        <div class="back-to-top">
-                            <p>
-                                That's all for now! Thanks for visiting.
-                            </p>
-                            <a href="#">
-                                <i class="fas fa-chevron-up"></i> <span>Back to top</span>
-                            </a>
-                        </div>
-                    </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__social">
+                    <a href="https://github.com/donyall" target="_blank" class="footer__social-link" aria-label="GitHub Profile">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:danyalalihaji@gmail.com" class="footer__social-link" aria-label="Email Contact">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/danyal-haji/" target="_blank" class="footer__social-link" aria-label="LinkedIn Profile">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <button id="discord-btn" class="footer__social-link" aria-label="Copy Discord Username">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0190 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
+                        </svg>
+                    </button>
                 </div>
+                <p>&copy; 2024 Danyal Haji. Built with passion and minimal dependencies.</p>
             </div>
         </div>
-    </section>
-
-    <script src="./js/base.js"></script>
+    </footer>
+    
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon" id="theme-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+        </svg>
+    </button>
+    
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
